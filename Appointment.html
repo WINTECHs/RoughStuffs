@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book An Appointment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .out_contain {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            box-shadow: 0px 0px 11px 2px black;
+        }
+
+        .out_contain h1 {
+            text-align: center;
+            margin: 3vh 2vw 1vh 2vw;
+        }
+
+        .d_details {
+            display: flex;
+            margin: 2vh 2vw;
+            font-size: 18px;
+        }
+
+        .d_details .d_det1 {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1vw;
+            width: 40%;
+        }
+
+        .d_det1 label {
+            margin: 0.8vh;
+        }
+
+        .d_details .d_det2 {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+
+        .d_det2 input[type="text"] {
+            margin: 0.5vh 0;
+            padding: 0.3vh 0.5vw;
+            font-size: 15px;
+        }
+
+        .p_details {
+            display: flex;
+            margin: 2vh 2vw;
+            font-size: 18px;
+        }
+
+        .p_details .p_det1 {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1vw;
+            width: 40%;
+
+        }
+
+        .p_det1 label {
+            margin: 0.8vh;
+        }
+
+        .p_details .p_det2 {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+
+        }
+
+        .p_det2 input[type="text"] {
+            margin: 0.5vh 0;
+            padding: 0.3vh 0.5vw;
+            font-size: 15px;
+        }
+
+        .t_details {
+            display: flex;
+            margin: 2vh 2vw;
+            font-size: 18px;
+        }
+
+        .t_details .t_det1 {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1vw;
+            width: 40%;
+
+        }
+
+        .t_det1 label {
+            margin: 0.8vh;
+        }
+
+        .t_details .t_det2 {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+
+        }
+
+        .t_det2 input[type="text"] {
+            margin: 0.5vh 0;
+            padding: 0.3vh 0.5vw;
+            font-size: 15px;
+        }
+
+        .t_det2 select {
+            margin: 0.5vh 0;
+            padding: 0.3vh 0.5vw;
+            font-size: 15px;
+        }
+
+        .t_det2 .date_con {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5vh 0;
+            padding: 0.3vh 0.5vw;
+            border: 1px solid gray;
+            border-radius: 2px;
+        }
+
+        .t_det2 .dt_btn {
+            margin: 0 0.5vw;
+            font-size: 19px;
+            font-weight: bolder;
+            cursor: pointer;
+            font-family: system-ui;
+        }
+
+        .t_det2 .d_view {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+
+
+        .btns {
+            display: flex;
+            justify-content: flex-end;
+            padding: 2vh 2vw;
+        }
+
+        .btns input[type="button"] {
+            margin-right: 1vw;
+            padding: 0.5vh 2vw;
+            cursor: pointer;
+        }
+
+        .btns input[type="submit"] {
+            padding: 0.5vh 1vw;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out_contain">
+        <h1>Book Appointment</h1>
+        <div class="d_details">
+            <div class="d_det1">
+                <label> Doctor Name </label>
+                <label> Specialized In </label>
+                <label> Experience </label>
+            </div>
+            <div class="d_det2">
+                <input type="text" value="Dr. Shivani Prusty" readonly>
+                <input type="text" value="Cardiology Specialist" readonly>
+                <input type="text" value="+16 Years Experience" readonly>
+            </div>
+        </div>
+
+        <div class="p_details">
+            <div class="p_det1">
+                <label>Patient Name</label>
+                <label>Contact No.</label>
+            </div>
+            <div class="p_det2">
+                <input type="text">
+                <input type="text" maxlength="10">
+            </div>
+        </div>
+
+        <div class="t_details">
+            <div class="t_det1">
+                <label>Year</label>
+                <label>Month</label>
+                <label>Date</label>
+                <label>Time Slot</label>
+            </div>
+            <div class="t_det2">
+                <input type="text" readonly id="year">
+                <input type="text" readonly id="month">
+                <div class="date_con">
+                    <div class="dt_btn" onclick="PrevDate()">&#xab;</div>
+                    <div class="d_view" id="view"></div>
+                    <div class="dt_btn" onclick="NextDate()">&#xbb;</div>
+                </div>
+                <select>
+                    <option value="06.00 AM - 09.00 AM">06.00 AM - 09.00 AM</option>
+                    <option value="10.00 AM - 01.00 PM">10.00 AM - 01.00 PM</option>
+                    <option value="04.00 PM - 06.00 PM">04.00 PM - 06.00 PM</option>
+                    <option value="06.30 PM - 08.00 PM">06.30 PM - 08.00 PM</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="btns">
+            <input type="button" value="Cancel" onclick="history.back()">
+            <input type="submit" value="Book Now">
+        </div>
+    </div>
+
+</body>
+
+<script lang="javascript">
+    var monthlist = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var dt = new Date();
+    var m = dt.getMonth();
+    var month = monthlist[m];
+    var year = dt.getFullYear();
+    var date = eval(dt.getDate());
+    while (date <= 31) {
+        if (date % 2 == 0) {
+            var date_nxt = date + 1;
+            break;
+        }
+        else {
+            date_nxt = date + 2;
+            break;
+        }
+    }
+
+    document.getElementById("year").value = year;//Passingyear
+
+    //Passing Date and Month
+    if (date < 29) {
+        document.getElementById("view").innerHTML = date_nxt;
+        document.getElementById("month").value = month;
+
+    }
+    else if (date >= 29) {
+        document.getElementById("month").value = monthlist[m + 1];
+        document.getElementById("view").innerHTML = 1;
+    }
+
+    //Modifying Date
+    function NextDate() {
+
+        date = eval(document.getElementById("view").innerHTML);
+        if (date < 29) {
+            document.getElementById("view").innerHTML = date + 2;
+        }
+    }
+
+    function PrevDate() {
+        date = eval(document.getElementById("view").innerHTML);
+        if (date > date_nxt) {
+            document.getElementById("view").innerHTML = date - 2;
+        }
+    }
+</script>
+
+</html>
