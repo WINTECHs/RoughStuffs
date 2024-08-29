@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="TODO_LIST.css">
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="home">
+            <div class="top">
+                <h4>TO-DO</h4>
+                <input type="button" value="Add New" class="add_new_btn" onclick="todo_add_show_hide()">
+                <span class="todo_add" id="todo_add">
+                    <input type="text" name="todo_subject" id="todo_subject" placeholder="Subject" required>
+                    <input type="text" name="todo_desc" id="todo_desc" placeholder="Description" required>
+                    <input type="button" id="add_btn" value="ADD" onclick="store()">
+                    <span class="todo_edit_contain">
+                        <input type="button" id="update_btn" value="UPDATE">
+                        <input type="button" id="cancel_btn" value="CANCEL" onclick="todoUpdateCancel()">
+                    </span>
+                </span>
+            </div>
+            <div class="middle">
+                <!-- <div class="todo_contain">
+                    <div class="todo_title">
+                        <span class="subject">Study</span>
+                        <span class="edit"> <input type="button" value="&#9998">
+                        </span>
+                        <span class="delete"> <input type="button" value="&#128465">
+                        </span>
+                    </div>
+                    <div class="todo_body">
+                        <span class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti est
+                            tempore velit. Illo, quam! Ipsam officia sunt maiores velit nisi?</span>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="activity"></div>
+    </div>
+
+</body>
+<script src="TODO_LIST.js"></script>
+
+</html>

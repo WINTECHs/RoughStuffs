@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: black; */
+}
+
+.main_container {
+    display: flex;
+    justify-content: center;
+    max-height: 40vh;
+    max-width: 30vw;
+    /* margin: 8vh 5vw; */
+    /* padding: 1vh 1vw; */
+    /* background-color: white; */
+}
+
+.home {
+    /* background-color: rgb(105, 105, 231); */
+    border: 1px solid black;
+    border-radius: 7px 7px;
+    box-shadow: 0px 0px 15px 3px black;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(209, 39, 39);
+    height: 30%;
+    border-radius: 7px 7px 0 0;
+}
+
+.top h4 {
+    text-align: center;
+    font-size: 30px;
+    font-family: fantasy;
+    color: white;
+    filter: drop-shadow(2px 1px 0px black);
+}
+
+.top .add_new_btn {
+    background: blue;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0px 0px 3px 0px;
+    border-radius: 7px 7px;
+    margin-bottom: 1vh;
+    width: 80%;
+    align-self: center;
+}
+
+.todo_add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+}
+
+.todo_add input[type="text"] {
+    margin-top: 0.3vh;
+    padding: 0.8vh 1vw;
+    width: 90%;
+    font-size: 16px;
+    border-radius: 5px 5px;
+}
+
+.todo_add #todo_subject {
+    font-size: 16px;
+}
+
+.todo_add #todo_desc {
+    height: 8vh;
+}
+
+.todo_add input[type="button"] {
+    width: 50%;
+    margin-top: 0.5vh;
+    padding: 0.5vh 1vw;
+    background: green;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0px 0px 3px 0px;
+    border-radius: 7px 7px;
+}
+
+.todo_edit_contain {
+    display: none;
+    justify-content: space-evenly;
+
+    #update_btn {
+        background: blue;
+    }
+
+    #cancel_btn {
+        background: red;
+    }
+
+}
+
+
+
+.middle {
+    display: block;
+    height: 60%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.todo_title {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0.8vh 1vw;
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+
+    input[type="button"] {
+        background: none;
+        width: 100%;
+        font-size: 20px;
+        font-weight: bolder;
+        border: none;
+        cursor: pointer;
+    }
+
+}
+
+.subject {
+    font-weight: bold;
+    font-size: 17px;
+    width: 80%;
+
+}
+
+.edit {
+    width: 10%;
+    margin: 0 1vw;
+
+    input {
+        transform: rotateY(180deg);
+    }
+}
+
+.delete {
+    width: 10%;
+
+}
+
+.todo_body {
+    padding: 0.8vh 1vw;
+
+    .description {
+        /* Allow long words to be broken and wrap onto the next line */
+        word-wrap: break-word;
+        /* Ensure compatibility with different browsers */
+        overflow-wrap: break-word;
+    }
+}
